@@ -12,20 +12,22 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-5xl font-bold">I'm Jack Zhang</div>
+    <div class="text-3xl py-3 font-bold">Senior Majoring in Computer Engineering from UIUC</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+         My academic and professional journey bridges system-level engineering, data-driven modeling, and AI research. 
+         I have hands-on experience in building deep learning systems for speaker recognition, fairness-aware machine learning under distribution shift, 
+         and full-stack development for e-commerce analytics!
       </text>
     </div>
+    <div class="mt-4 text-lg italic text-center text-gray-600">
+      "Contact me if you are interested in working with me @jackshengxinz@gmail.com or sz68@illinois.edu"
+    </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+      <a class="btn" href="https://www.linkedin.com/in/shengxin-zhang-b707bb280a" target="_blank">LinkedIn</a>
+      <a class="btn btn-outline ml-5" href="/张圣鑫简历 (1).pdf" target="_blank">Chinese resume</a>
+      <a class="btn btn-outline ml-5" href="/CV.pdf" target="_blank">CV</a>
     </div>
   </div>
 
@@ -34,45 +36,46 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Multimodal Representation Learning"
+    img="/image copy.png"
+    desc="Research on multimodal representation learning for robust speaker identification across diverse data sources."
     url="#"
+    badge="IN PROGRESS"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Machine-Learning-Model-Fairness-Under-Demographic-Shift"
+    img="/image.png"
+    desc="Research and implementation of algorithms to ensure fairness in machine learning models under demographic distribution shifts. Focuses on mitigating bias and improving model robustness across diverse populations. [GitHub Repo](https://github.com/jackshengxinz/Machine-Learning-Model-Fairness-Under-Demographic-Shift)"
+    url="https://github.com/jackshengxinz/Machine-Learning-Model-Fairness-Under-Demographic-Shift"
     badge="NEW"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Iron Man vs Captain America"
+    img="/image copy 2.png"
+    desc="FPGA-based game demo: Deploy and run a real-time Iron Man vs Captain America game on FPGA using Vitis. Move Iron Man (WASD) and Captain America (Arrow keys), fire missiles (J) and shield (/?), and watch health bars update live. See README for full deployment and usage instructions."
     url="#"
     badge="FOSS"
+  />
+  <HorizontalCard
+    title="E-Commerce Sales Prediction and Inventory Optimization System"
+    img="/image copy 3.png"
+    desc="Full-stack system for e-commerce sales forecasting and inventory optimization, featuring advanced database automation and a React + Flask interface."
+    url="https://github.com/cs411-alawini/sp25-cs411-team003-zhyzszxz"
+    badge="Full-Stack"
   />
 
   <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
   </div>
 
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  <HorizontalCard
+    title="Demo Post 1"
+    img="/post_img.webp"
+    desc="Upcoming"
+    url="/blog/post1"
+    target="_self"
+    badge={last_posts[0].data.badge}
+  />
 </BaseLayout>
