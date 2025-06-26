@@ -5,8 +5,11 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jackshengxinz.github.io/Jack-Zhang-s-Personal-Website/',
+  site: 'https://jackshengxinz.github.io',
   base: '/Jack-Zhang-s-Personal-Website/',
   output: 'static',
-  integrations: [mdx(), sitemap(), tailwind()]
+  integrations: [mdx(), sitemap(), tailwind()],
+  vite: {
+    base: '/Jack-Zhang-s-Personal-Website/',
+  },
 });
