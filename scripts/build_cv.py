@@ -64,7 +64,7 @@ entry('Fairness Guarantee under Demographic Shift','Jul - Aug 2023','Supervised 
 'Designed and evaluated a fairness-aware algorithm under demographic, covariate, and marginal shifts, using PyTorch multilayer perceptrons for experimental validation.'
 ])
 section('Teaching Experience')
-entry('Undergraduate Course Assistant - CS 124, ECE 110, STAT 400','Started Aug 2023','University of Illinois Urbana-Champaign',[
+entry('Undergraduate Course Assistant - CS 124, ECE 110, ECE 385, STAT 400','Started Aug 2023','University of Illinois Urbana-Champaign',[
 'Supported over 100 students through office hours in Java programming, circuit analysis, and statistical modeling.',
 'Graded assignments and lab reports, mentored new teaching assistants, proctored exams, and coordinated with faculty.'
 ])
