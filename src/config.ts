@@ -3,6 +3,6 @@
 
 export const SITE_TITLE = "Jack Zhang | AI Evaluation & Machine Learning";
 export const SITE_DESCRIPTION =
-  "Jack Zhang's research and engineering portfolio: diversity in AI-generated peer review, LLM evaluation, fairness under distribution shift, and robust representation learning. Background in computer engineering and statistics at UIUC.";
+  "Jack Zhang is an M.S. student in Electrical and Computer Engineering at UIUC, advised by Varun Chandrasekaran. Research in LLM evaluation, diversity in AI-generated peer review, fairness, and robust representations.";
 export const GENERATE_SLUG_FROM_TITLE = true;
 export const TRANSITION_API = true;
