@@ -1,0 +1,95 @@
+---
+const base = import.meta.env.BASE_URL;
+const projects = [
+  {
+    id: "representation",
+    category: "RESEARCH / MACHINE LEARNING",
+    title: "Learning beyond a single modality.",
+    name: "Multimodal Representation Learning",
+    description:
+      "Exploring robust speaker identification through multimodal representations, with attention to background noise and speaker variability.",
+    image: "image_copy.png",
+    tags: ["Representation learning", "Speaker recognition"],
+    detail:
+      "Research on deep residual frameworks for speaker recognition across diverse audio sources and noisy conditions.",
+  },
+  {
+    id: "fairness",
+    category: "RESEARCH / RESPONSIBLE AI",
+    title: "Fair models in a shifting world.",
+    name: "Fairness under Demographic Shift",
+    description:
+      "Fairness-aware learning that addresses demographic distribution shifts, balancing model robustness with demographic parity.",
+    image: "image.png",
+    tags: ["PyTorch", "Algorithmic fairness"],
+    url: "https://github.com/jackshengxinz/Machine-Learning-Model-Fairness-Under-Demographic-Shift",
+  },
+  {
+    id: "fpga",
+    category: "ENGINEERING / HARDWARE",
+    title: "A real-time game, built on FPGA.",
+    name: "Iron Man vs Captain America",
+    description:
+      "A two-player hardware game with live health tracking, keyboard controls, and real-time interactions, deployed using Vitis.",
+    image: "image_copy_2.png",
+    tags: ["FPGA", "SystemVerilog", "Vitis"],
+    detail:
+      "Players control Iron Man with WASD and Captain America with the arrow keys. Missile and shield actions connect keyboard input to live game state and health bars.",
+  },
+  {
+    id: "commerce",
+    category: "ENGINEERING / FULL STACK",
+    title: "Turning sales data into decisions.",
+    name: "E-Commerce Inventory Optimization",
+    description:
+      "A full-stack platform for sales forecasting, order tracking, and inventory optimization, connecting database automation to a practical interface.",
+    image: "image_copy_3.png",
+    tags: ["React", "Flask", "SQL"],
+    url: "https://github.com/cs411-alawini/sp25-cs411-team003-zhyzszxz",
+  },
+];
+---
+
+<div class="project-grid">
+  {projects.map((p, i) => (
+    <article class="project-card" id={p.id}>
+      <div class={`project-image image-${p.id}`}>
+        <img
+          src={`${base}${p.image}`}
+          alt={p.name}
+          width="800"
+          height="450"
+          loading="lazy"
+        />
+        <span class="project-number">0{i + 1}</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">{p.category}</p>
+        <h3>{p.title}</h3>
+        <p>{p.description}</p>
+        <div class="tags">
+          {p.tags.map((t) => (
+            <span>{t}</span>
+          ))}
+        </div>
+        {p.url ? (
+          <a
+            class="text-link"
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View repository ↗
+          </a>
+        ) : (
+          <details>
+            <summary>Project details +</summary>
+            <p>
+              <strong>{p.name}.</strong> {p.detail}
+            </p>
+          </details>
+        )}
+      </div>
+    </article>
+  ))}
+</div>

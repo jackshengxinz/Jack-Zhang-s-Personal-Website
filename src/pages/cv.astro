@@ -3,13 +3,44 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+<BaseLayout title="Experience | Jack Zhang" sideBarActiveItemID="cv">
+  <div class="page-intro">
+    <p class="eyebrow">BACKGROUND & EXPERIENCE</p>
+    <h1>A foundation for building.</h1>
+    <p>
+      Computer engineering, statistical thinking, and applied machine learning.
+    </p>
+    <div class="actions">
+      <a
+        class="button primary"
+        href={`${import.meta.env.BASE_URL}CV.pdf`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View CV ↗
+      </a>
+      <a
+        class="button secondary"
+        href={`${import.meta.env.BASE_URL}resume.pdf`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        中文履歷 ↗
+      </a>
+    </div>
+  </div>
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Profile</div>
   </div>
 
   <div class="mb-10 text-justify">
-    I'm Jack Zhang, a Computer Engineering undergraduate at the University of Illinois Urbana-Champaign, minoring in Statistics. My background combines strong mathematical foundations with hands-on experience in machine learning, full-stack development, and algorithmic fairness. I’ve conducted research on speaker-invariant representation learning and fairness-aware ML under distribution shift, and contributed to AI-driven systems in finance, healthcare, and e-commerce domains.
+    I'm Jack Zhang, a Computer Engineering undergraduate at the University of
+    Illinois Urbana-Champaign, minoring in Statistics. My background combines
+    strong mathematical foundations with hands-on experience in machine
+    learning, full-stack development, and algorithmic fairness. I’ve conducted
+    research on speaker-invariant representation learning and fairness-aware ML
+    under distribution shift, and contributed to AI-driven systems in finance,
+    healthcare, and e-commerce domains.
   </div>
 
   <div class="mb-5">
@@ -32,28 +63,37 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       title="Research Intern — Multimodal Biometric Representation Learning"
       subtitle="May 2025 to Present · Hangzhou"
     >
-      Built speaker recognition models using speaker-invariant deep residual frameworks. Improved robustness to background noise and inter-speaker variability for real-world audio-based identification.
+      Built speaker recognition models using speaker-invariant deep residual
+      frameworks. Improved robustness to background noise and inter-speaker
+      variability for real-world audio-based identification.
     </TimeLineElement>
 
     <TimeLineElement
       title="Research Intern — Fairness-Aware Machine Learning under Distribution Shift"
       subtitle="May 2023 to Aug 2023 · Remote"
     >
-      Developed fairness-regularized MLPs using PyTorch. Proposed Shifty-Pro algorithm to improve demographic parity and generalization across population drift scenarios, achieving a 42.7% improvement in fairness metrics.
+      Developed fairness-regularized MLPs using PyTorch. Proposed Shifty-Pro
+      algorithm to improve demographic parity and generalization across
+      population drift scenarios, achieving a 42.7% improvement in fairness
+      metrics.
     </TimeLineElement>
 
     <TimeLineElement
       title="Data Analyst — Shanghai Artificial Intelligence Laboratory"
       subtitle="May 2023 to Aug 2023 · Shanghai"
     >
-      Built hospital cost prediction models using multivariate linear regression. Developed credit card fraud detection pipelines with logistic regression. Applied YOLOv8-based object detection for sports analytics.
+      Built hospital cost prediction models using multivariate linear
+      regression. Developed credit card fraud detection pipelines with logistic
+      regression. Applied YOLOv8-based object detection for sports analytics.
     </TimeLineElement>
 
     <TimeLineElement
       title="Full-Stack Developer — E-Commerce Inventory Optimization System"
       subtitle="Feb 2025 to May 2025 · Champaign"
     >
-      Led backend (Flask + SQL) and frontend (React) development for an intelligent order-tracking and analytics system. Designed transaction logic, complex queries, and user interfaces for real-time insights.
+      Led backend (Flask + SQL) and frontend (React) development for an
+      intelligent order-tracking and analytics system. Designed transaction
+      logic, complex queries, and user interfaces for real-time insights.
     </TimeLineElement>
   </div>
 
@@ -63,10 +103,17 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <ul class="list-disc mx-6 mb-10 grid gap-2">
     <li>
-      <a href="https://www.ets.org/toefl" target="_blank">TOEFL 109</a>
+      <a href="https://www.ets.org/toefl" target="_blank">
+        TOEFL 109
+      </a>
     </li>
     <li>
-      <a href="https://www.coursera.org/specializations/deep-learning" target="_blank">Deep Learning Specialization (in progress)</a>
+      <a
+        href="https://www.coursera.org/specializations/deep-learning"
+        target="_blank"
+      >
+        Deep Learning Specialization (in progress)
+      </a>
     </li>
   </ul>
 
