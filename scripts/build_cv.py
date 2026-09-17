@@ -64,7 +64,7 @@ entry('Fairness Guarantee under Demographic Shift','Jul - Aug 2023','Supervised 
 'Designed and evaluated a fairness-aware algorithm under demographic, covariate, and marginal shifts, using PyTorch multilayer perceptrons for experimental validation.'
 ])
 section('Teaching Experience')
-entry('Course Assistant - ECE 385','','University of Illinois Urbana-Champaign',[
+entry('Graduate Teaching Assistant - ECE 385','','University of Illinois Urbana-Champaign',[
 'Support students in designing, implementing, and debugging digital systems using SystemVerilog, FPGA development tools, and laboratory hardware.',
 'Lead lab sessions and office hours covering combinational and sequential logic, finite-state machines, datapaths, memory, and processor design.',
 'Review student designs, provide technical feedback, and grade assignments according to course standards.'
