@@ -1,10 +1,12 @@
 ---
 const base = import.meta.env.BASE_URL;
+const { group = "all", detailed = false } = Astro.props;
 const projects = [
   {
     id: "representation",
+    group: "research",
     category: "RESEARCH / MACHINE LEARNING",
-    title: "Learning beyond a single modality.",
+    title: "Multimodal Representation Learning",
     name: "Multimodal Representation Learning",
     description:
       "Exploring robust speaker identification through multimodal representations, with attention to background noise and speaker variability.",
@@ -12,22 +14,32 @@ const projects = [
     tags: ["Representation learning", "Speaker recognition"],
     detail:
       "Research on deep residual frameworks for speaker recognition across diverse audio sources and noisy conditions.",
+    question:
+      "How can speaker identification remain reliable when audio sources and background noise change?",
+    approach:
+      "Deep residual frameworks and speaker representations, with a focus on robustness to noise and inter-speaker variability.",
   },
   {
     id: "fairness",
+    group: "research",
     category: "RESEARCH / RESPONSIBLE AI",
-    title: "Fair models in a shifting world.",
+    title: "Fairness under Demographic Shift",
     name: "Fairness under Demographic Shift",
     description:
       "Fairness-aware learning that addresses demographic distribution shifts, balancing model robustness with demographic parity.",
     image: "image.png",
     tags: ["PyTorch", "Algorithmic fairness"],
     url: "https://github.com/jackshengxinz/Machine-Learning-Model-Fairness-Under-Demographic-Shift",
+    question:
+      "How can a model preserve demographic parity and generalize when the population it serves changes?",
+    approach:
+      "Fairness-regularized multilayer perceptrons in PyTorch and the Shifty-Pro algorithm, evaluated under demographic distribution shifts.",
   },
   {
     id: "fpga",
+    group: "engineering",
     category: "ENGINEERING / HARDWARE",
-    title: "A real-time game, built on FPGA.",
+    title: "Iron Man vs Captain America — FPGA Game",
     name: "Iron Man vs Captain America",
     description:
       "A two-player hardware game with live health tracking, keyboard controls, and real-time interactions, deployed using Vitis.",
@@ -35,61 +47,93 @@ const projects = [
     tags: ["FPGA", "SystemVerilog", "Vitis"],
     detail:
       "Players control Iron Man with WASD and Captain America with the arrow keys. Missile and shield actions connect keyboard input to live game state and health bars.",
+    question:
+      "Connect two-player keyboard input, combat interactions, and live game state in a real-time hardware system.",
+    approach:
+      "SystemVerilog and Vitis deployment on FPGA, with separate player controls, missile and shield actions, and live health bars.",
   },
   {
     id: "commerce",
+    group: "engineering",
     category: "ENGINEERING / FULL STACK",
-    title: "Turning sales data into decisions.",
+    title: "E-Commerce Sales & Inventory Optimization",
     name: "E-Commerce Inventory Optimization",
     description:
       "A full-stack platform for sales forecasting, order tracking, and inventory optimization, connecting database automation to a practical interface.",
     image: "image_copy_3.png",
     tags: ["React", "Flask", "SQL"],
     url: "https://github.com/cs411-alawini/sp25-cs411-team003-zhyzszxz",
+    question:
+      "Bring order tracking, sales forecasting, and inventory information into a usable analytics application.",
+    approach:
+      "React frontend, Flask backend, and SQL database automation, including transaction logic and complex analytical queries.",
   },
 ];
 ---
 
 <div class="project-grid">
-  {projects.map((p, i) => (
-    <article class="project-card" id={p.id}>
-      <div class={`project-image image-${p.id}`}>
-        <img
-          src={`${base}${p.image}`}
-          alt={p.name}
-          width="800"
-          height="450"
-          loading="lazy"
-        />
-        <span class="project-number">0{i + 1}</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">{p.category}</p>
-        <h3>{p.title}</h3>
-        <p>{p.description}</p>
-        <div class="tags">
-          {p.tags.map((t) => (
-            <span>{t}</span>
-          ))}
+  {projects
+    .filter((p) => group === "all" || p.group === group)
+    .map((p, i) => (
+      <article class="project-card" id={p.id}>
+        <div class={`project-image image-${p.id}`}>
+          <img
+            src={`${base}${p.image}`}
+            alt={p.name}
+            width="800"
+            height="450"
+            loading="lazy"
+          />
+          <span class="project-number">0{i + 1}</span>
         </div>
-        {p.url ? (
-          <a
-            class="text-link"
-            href={p.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View repository ↗
-          </a>
-        ) : (
-          <details>
-            <summary>Project details +</summary>
-            <p>
-              <strong>{p.name}.</strong> {p.detail}
-            </p>
-          </details>
-        )}
-      </div>
-    </article>
-  ))}
+        <div class="project-body">
+          <p class="eyebrow">{p.category}</p>
+          <h3>{p.title}</h3>
+          <p>{p.description}</p>
+          {detailed && (
+            <dl class="project-explainer">
+              <div>
+                <dt>
+                  {p.group === "research" ? "Research question" : "Objective"}
+                </dt>
+                <dd>{p.question}</dd>
+              </div>
+              <div>
+                <dt>Approach</dt>
+                <dd>{p.approach}</dd>
+              </div>
+            </dl>
+          )}
+          <div class="tags">
+            {p.tags.map((t) => (
+              <span>{t}</span>
+            ))}
+          </div>
+          {p.url ? (
+            <a
+              class="text-link"
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repository ↗
+            </a>
+          ) : !detailed ? (
+            <details>
+              <summary>Project details +</summary>
+              <p>
+                <strong>{p.name}.</strong> {p.detail}
+              </p>
+            </details>
+          ) : (
+            <a
+              class="text-link"
+              href={`mailto:jackshengxinz@gmail.com?subject=${encodeURIComponent(p.name)}`}
+            >
+              Ask about this project ↗
+            </a>
+          )}
+        </div>
+      </article>
+    ))}
 </div>
