@@ -297,6 +297,23 @@ h2 {
   font-size: 10px;
   color: #4c5c50;
 }
+.simulation-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+  color: var(--green);
+}
+.simulation-cover span {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.simulation-cover strong {
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 600;
+}
 .project-body {
   padding: 27px;
 }
