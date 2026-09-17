@@ -13,10 +13,10 @@ TEXT = colors.HexColor('#222222')
 styles = {
     'name': ParagraphStyle('name', fontName='Times-Bold', fontSize=21, leading=24, alignment=TA_CENTER, textColor=INK),
     'contact': ParagraphStyle('contact', fontName='Helvetica', fontSize=8.3, leading=11, alignment=TA_CENTER),
-    'body': ParagraphStyle('body', fontName='Helvetica', fontSize=9.2, leading=12, textColor=TEXT),
+    'body': ParagraphStyle('body', fontName='Helvetica', fontSize=9.2, leading=11.5, textColor=TEXT),
     'small': ParagraphStyle('small', fontName='Helvetica', fontSize=8.6, leading=11, textColor=TEXT),
-    'section': ParagraphStyle('section', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=INK, spaceBefore=9, spaceAfter=4),
-    'bullet': ParagraphStyle('bullet', fontName='Helvetica', fontSize=9.2, leading=12, leftIndent=9, firstLineIndent=-7, spaceAfter=1.5),
+    'section': ParagraphStyle('section', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=INK, spaceBefore=5, spaceAfter=3),
+    'bullet': ParagraphStyle('bullet', fontName='Helvetica', fontSize=9.2, leading=11.5, leftIndent=9, firstLineIndent=-7, spaceAfter=1.5),
 }
 W = A4[0] - 76
 story=[]
@@ -25,14 +25,14 @@ def section(title):
     story.append(p(title.upper(), 'section'))
     line=Table([['']],colWidths=[W],rowHeights=[1])
     line.setStyle(TableStyle([('LINEBELOW',(0,0),(-1,-1),0.5,INK)]))
-    story.extend([line,Spacer(1,4)])
+    story.extend([line,Spacer(1,3)])
 def entry(title,date,subtitle=None,bullets=()):
     row=Table([[p('<b>'+title+'</b>'),p(date,'small')]],colWidths=[W-113,113])
     row.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(-1,-1),0),('TOPPADDING',(0,0),(-1,-1),0),('BOTTOMPADDING',(0,0),(-1,-1),1)]))
     block=[row]
     if subtitle: block.append(p(subtitle,'small'))
     block += [p('- '+text,'bullet') for text in bullets]
-    block.append(Spacer(1,4))
+    block.append(Spacer(1,3))
     story.append(KeepTogether(block))
 
 story.append(p('Shengxin (Jack) Zhang','name'))
@@ -64,7 +64,12 @@ entry('Fairness Guarantee under Demographic Shift','Jul - Aug 2023','Supervised 
 'Designed and evaluated a fairness-aware algorithm under demographic, covariate, and marginal shifts, using PyTorch multilayer perceptrons for experimental validation.'
 ])
 section('Teaching Experience')
-entry('Undergraduate Course Assistant - CS 124, ECE 110, ECE 385, STAT 400','Started Aug 2023','University of Illinois Urbana-Champaign',[
+entry('Course Assistant - ECE 385','','University of Illinois Urbana-Champaign',[
+'Support students in designing, implementing, and debugging digital systems using SystemVerilog, FPGA development tools, and laboratory hardware.',
+'Lead lab sessions and office hours covering combinational and sequential logic, finite-state machines, datapaths, memory, and processor design.',
+'Review student designs, provide technical feedback, and grade assignments according to course standards.'
+])
+entry('Undergraduate Course Assistant - CS 124, ECE 110, STAT 400','Started Aug 2023','University of Illinois Urbana-Champaign',[
 'Supported over 100 students through office hours in Java programming, circuit analysis, and statistical modeling.',
 'Graded assignments and lab reports, mentored new teaching assistants, proctored exams, and coordinated with faculty.'
 ])
@@ -76,6 +81,6 @@ section('Technical Skills')
 story.append(p('<b>Languages:</b> Python, Java, C/C++, SQL, SystemVerilog, LC-3, JavaScript, HTML','small'))
 story.append(p('<b>Tools:</b> PyTorch, scikit-learn, React, Git, Isaac Sim | <b>Focus:</b> LLM evaluation, algorithmic fairness, scientific simulation, 3D scientific asset generation','small'))
 
-doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=38,leftMargin=38,topMargin=30,bottomMargin=30,title='Shengxin (Jack) Zhang - Curriculum Vitae',author='Shengxin (Jack) Zhang')
+doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=38,leftMargin=38,topMargin=25,bottomMargin=25,title='Shengxin (Jack) Zhang - Curriculum Vitae',author='Shengxin (Jack) Zhang')
 doc.build(story)
 print(OUT)
