@@ -1,15 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import PaperFeature from "../components/PaperFeature.astro";
 ---
 
 <BaseLayout title="Experience | Jack Zhang" sideBarActiveItemID="cv">
   <div class="page-intro">
     <p class="eyebrow">BACKGROUND & EXPERIENCE</p>
     <h1>A foundation for building.</h1>
-    <p>
-      Computer engineering, statistical thinking, and applied machine learning.
-    </p>
+    <p>LLM evaluation, algorithmic fairness, and applied machine learning.</p>
     <div class="actions">
       <a
         class="button primary"
@@ -34,14 +33,18 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-10 text-justify">
-    I'm Jack Zhang, a Computer Engineering undergraduate at the University of
-    Illinois Urbana-Champaign, minoring in Statistics. My background combines
-    strong mathematical foundations with hands-on experience in machine
-    learning, full-stack development, and algorithmic fairness. I’ve conducted
-    research on speaker-invariant representation learning and fairness-aware ML
-    under distribution shift, and contributed to AI-driven systems in finance,
-    healthcare, and e-commerce domains.
+    I'm Jack Zhang, with a background in Computer Engineering and Statistics at
+    the University of Illinois Urbana-Champaign. My research spans LLM-generated
+    peer review, diversity in scientific evaluation, fairness-aware learning
+    under distribution shift, and speaker representation learning. I also build
+    data-driven applications, connecting statistical analysis with full-stack
+    development and system-level engineering.
   </div>
+
+  <section class="cv-research" aria-labelledby="cv-research-title">
+    <h2 id="cv-research-title">Selected research</h2>
+    <PaperFeature compact />
+  </section>
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Education</div>
@@ -132,6 +135,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>Flask</li>
     <li>Deep Learning</li>
     <li>LLMs & Gen AI</li>
+    <li>LLM Evaluation</li>
     <li>Diffusion Models</li>
     <li>Fairness in AI</li>
     <li>Full-stack Development</li>

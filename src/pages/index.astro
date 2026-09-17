@@ -1,27 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectGrid from "../components/ProjectGrid.astro";
+import PaperFeature from "../components/PaperFeature.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <section class="hero-section">
     <div class="hero-copy">
-      <p class="eyebrow">● &nbsp; COMPUTER ENGINEERING · UIUC</p>
+      <p class="eyebrow">● &nbsp; MACHINE LEARNING · AI EVALUATION</p>
       <h1>
         Hi, I’m Jack.
-        <br />I build systems
+        <br />I study how
         <br />
-        that <em>learn.</em>
+        AI <em>evaluates.</em>
       </h1>
       <p class="hero-description">
-        At the intersection of machine learning, statistical thinking, and
-        hands-on engineering. Exploring how intelligent systems can become more
-        robust, fair, and useful.
+        My research explores diversity in AI-generated peer review, fairness
+        under distribution shift, and robust representations. I combine
+        statistical thinking with hands-on engineering to understand how
+        intelligent systems behave—and how to improve them.
       </p>
       <div class="actions">
-        <a class="button primary" href="#selected-work">
-          Explore my work ↘
+        <a class="button primary" href="#featured-research">
+          Explore my research ↘
         </a>
         <a
           class="button secondary"
@@ -62,14 +64,26 @@ const base = import.meta.env.BASE_URL;
   </section>
   <div class="focus-strip">
     <span class="eyebrow">CURRENT EXPLORATIONS</span>
-    <span>✳ Robust representations</span>
+    <span>✳ LLM evaluation</span>
     <span>✳ Fairness-aware learning</span>
-    <span>✳ Intelligent systems</span>
+    <span>✳ Robust representations</span>
   </div>
+  <section id="featured-research" class="featured-research">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">01 / FEATURED RESEARCH</p>
+        <h2>Do AI reviewers converge?</h2>
+      </div>
+      <a class="text-link" href={`${base}research/`}>
+        Research ↗
+      </a>
+    </div>
+    <PaperFeature />
+  </section>
   <section id="selected-work" class="work-section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">01 / SELECTED WORK</p>
+        <p class="eyebrow">02 / SELECTED PROJECTS</p>
         <h2>Ideas into practice.</h2>
       </div>
       <a class="text-link" href={`${base}projects/`}>
@@ -80,7 +94,7 @@ const base = import.meta.env.BASE_URL;
   </section>
   <section class="about-section">
     <div>
-      <p class="eyebrow">02 / MY APPROACH</p>
+      <p class="eyebrow">03 / MY APPROACH</p>
       <h2>
         From the model
         <br />
@@ -93,10 +107,10 @@ const base = import.meta.env.BASE_URL;
         complexity of the real world.
       </p>
       <p>
-        My work spans speaker recognition, algorithmic fairness under
-        distribution shift, and data-driven applications. A background in
-        computer engineering and statistics shapes how I approach both the model
-        and the system around it.
+        My work connects LLM evaluation, speaker recognition, and algorithmic
+        fairness under distribution shift. With a background in computer
+        engineering and statistics, I bring both empirical analysis and
+        practical system-building to these questions.
       </p>
       <a class="text-link" href={`${base}cv/`}>
         More about my experience ↗

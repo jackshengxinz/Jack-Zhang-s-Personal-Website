@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectGrid from "../components/ProjectGrid.astro";
+import PaperFeature from "../components/PaperFeature.astro";
 ---
 
 <BaseLayout title="Selected Work | Jack Zhang" sideBarActiveItemID="projects">
@@ -8,9 +9,15 @@ import ProjectGrid from "../components/ProjectGrid.astro";
     <p class="eyebrow">RESEARCH & ENGINEERING</p>
     <h1>Selected work.</h1>
     <p>
-      From robust machine learning to hands-on systems: a collection of research
-      and engineering projects.
+      From evaluating AI reviewers to building robust learning systems: research
+      and engineering grounded in real-world questions.
     </p>
   </div>
-  <ProjectGrid />
+  <PaperFeature compact />
+  <section class="related-projects" aria-labelledby="projects-title">
+    <div class="section-heading">
+      <h2 id="projects-title">Research & engineering projects</h2>
+    </div>
+    <ProjectGrid />
+  </section>
 </BaseLayout>
