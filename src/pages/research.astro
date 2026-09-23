@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ResearchPublication from "../components/ResearchPublication.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
 ---
 
 <BaseLayout
@@ -12,9 +13,8 @@ import ResearchPublication from "../components/ResearchPublication.astro";
     <h1>Research</h1>
     <p>
       I’m an M.S. ECE student at the University of Illinois Urbana-Champaign,
-      advised by Varun Chandrasekaran. I study how machine learning systems
-      evaluate, represent, and respond to a diverse world—with a focus on LLM
-      behavior, algorithmic fairness, and robust representations.
+      advised by Varun Chandrasekaran. My research focuses on LLM evaluation,
+      algorithmic fairness, and robust representations.
     </p>
   </div>
   <section aria-labelledby="manuscripts-title">
@@ -23,37 +23,13 @@ import ResearchPublication from "../components/ResearchPublication.astro";
     </h2>
     <ResearchPublication />
   </section>
-  <section class="research-directions" aria-labelledby="directions-title">
-    <p class="eyebrow">CONNECTED QUESTIONS</p>
-    <h2 id="directions-title">What makes an AI system useful?</h2>
-    <div class="direction-grid">
-      <article>
-        <span>01 / EVALUATION</span>
-        <h3>Independent judgment</h3>
-        <p>
-          Examining whether LLM-generated evaluations preserve distinct
-          perspectives and deliver specific, critical feedback.
-        </p>
-      </article>
-      <article>
-        <span>02 / FAIRNESS</span>
-        <h3>Reliability under change</h3>
-        <p>
-          Studying how learning algorithms balance fairness and generalization
-          when demographic distributions shift.
-        </p>
-      </article>
-      <article>
-        <span>03 / REPRESENTATION</span>
-        <h3>Robust signals</h3>
-        <p>
-          Exploring speaker representations that remain useful across variable
-          audio sources and background noise.
-        </p>
-      </article>
+  <section
+    class="research-directions"
+    aria-labelledby="research-projects-title"
+  >
+    <div class="section-heading">
+      <h2 id="research-projects-title">Research projects</h2>
     </div>
-    <a class="text-link" href={`${import.meta.env.BASE_URL}projects/`}>
-      Explore related projects
-    </a>
+    <ProjectGrid group="research" detailed />
   </section>
 </BaseLayout>
