@@ -893,10 +893,12 @@ details p {
   border-radius: 10px;
   overflow: hidden;
 }
-.publication-thumbnail svg {
+.publication-thumbnail img {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 .publication-content h3 {
   margin: 0 0 12px;
@@ -1113,4 +1115,20 @@ details p {
   .research-theme .project-body h3 {
     font-size: 21px;
   }
+}
+.research-theme .skip-link {
+  color: #172d25;
+}
+.research-theme a:focus-visible,
+.research-showcase a:focus-visible {
+  outline-color: #f4ba65;
+}
+.research-theme ::selection,
+.research-showcase ::selection {
+  color: #0f1728;
+  background: #f4ba65;
+}
+.publication-thumbnail {
+  border: 1px solid #334155;
+  background: #101b2d;
 }
