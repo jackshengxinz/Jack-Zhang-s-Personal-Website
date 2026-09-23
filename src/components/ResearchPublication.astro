@@ -1,0 +1,123 @@
+---
+import { paper } from "../data/paper";
+---
+
+<article class="publication-row">
+  <a
+    class="publication-thumbnail"
+    href={paper.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`Read ${paper.title}`}
+  >
+    <svg
+      viewBox="0 0 480 350"
+      role="img"
+      aria-label="Study overview: comparing human and AI peer review diversity"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="480" height="350" rx="16" fill="#f1f4f8" />
+      <text
+        x="30"
+        y="40"
+        fill="#223047"
+        font-family="Arial,sans-serif"
+        font-size="16"
+        font-weight="700"
+      >
+        DO AI REVIEWERS CONVERGE?
+      </text>
+      <text
+        x="30"
+        y="69"
+        fill="#64748b"
+        font-family="Arial,sans-serif"
+        font-size="12"
+      >
+        Human and model-generated peer review
+      </text>
+      <g fill="#64748b" font-family="Arial,sans-serif" font-size="13">
+        <text x="30" y="110">
+          HUMAN REVIEWS
+        </text>
+        <text x="267" y="110">
+          AI REVIEWS
+        </text>
+      </g>
+      <g fill="white" stroke="#d4dce7" stroke-width="2">
+        <rect x="30" y="128" width="59" height="86" rx="7" />
+        <rect x="100" y="128" width="59" height="86" rx="7" />
+        <rect x="170" y="128" width="59" height="86" rx="7" />
+        <rect x="267" y="128" width="49" height="86" rx="7" />
+        <rect x="327" y="128" width="49" height="86" rx="7" />
+        <rect x="387" y="128" width="49" height="86" rx="7" />
+      </g>
+      <g fill="none" stroke-width="5" stroke-linecap="round">
+        <path d="M43 149h29m-29 14h19m-19 14h30m-30 14h23" stroke="#b47747" />
+        <path d="M113 149h29m-29 14h23m-23 14h16m-16 14h29" stroke="#6b8d80" />
+        <path d="M183 149h29m-29 14h16m-16 14h26m-26 14h20" stroke="#7f79a6" />
+        <path
+          d="M279 149h25m-25 14h18m-18 14h25m-25 14h18m42-42h25m-25 14h18m-18 14h25m-25 14h18m42-42h25m-25 14h18m-18 14h25m-25 14h18"
+          stroke="#5e83b7"
+        />
+      </g>
+      <path d="M30 243H446" stroke="#d4dce7" />
+      <g
+        fill="#223047"
+        font-family="Arial,sans-serif"
+        font-size="22"
+        font-weight="700"
+      >
+        <text x="30" y="279">
+          509
+        </text>
+        <text x="175" y="279">
+          1,943
+        </text>
+        <text x="327" y="279">
+          10,172
+        </text>
+      </g>
+      <g fill="#64748b" font-family="Arial,sans-serif" font-size="12">
+        <text x="30" y="303">
+          Papers
+        </text>
+        <text x="175" y="303">
+          Human reviews
+        </text>
+        <text x="327" y="303">
+          AI reviews
+        </text>
+        <text x="30" y="333" font-size="10">
+          STUDY OVERVIEW · SCHEMATIC
+        </text>
+      </g>
+    </svg>
+  </a>
+  <div class="publication-content">
+    <h3>
+      <a href={paper.url} target="_blank" rel="noopener noreferrer">
+        {paper.title}
+      </a>
+    </h3>
+    <p class="publication-topics">
+      LLM evaluation <span>·</span> AI for science <span>·</span> Peer review
+    </p>
+    <p class="publication-venue">
+      Findings of EMNLP <span class="publication-accepted">Accepted</span>
+    </p>
+    <p class="publication-abstract">{paper.finding}</p>
+    <div class="publication-links">
+      <a href={paper.url} target="_blank" rel="noopener noreferrer">
+        Paper
+      </a>
+      <a
+        href="https://openreview.net/forum?id=NdDKcU9HlU"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        OpenReview
+      </a>
+    </div>
+  </div>
+</article>

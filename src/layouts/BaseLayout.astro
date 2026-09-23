@@ -21,7 +21,7 @@ const base = import.meta.env.BASE_URL;
       ogType={ogType}
     />
   </head>
-  <body>
+  <body class:list={{ "research-theme": sideBarActiveItemID === "research" }}>
     <a class="skip-link" href="#main">
       Skip to content
     </a>

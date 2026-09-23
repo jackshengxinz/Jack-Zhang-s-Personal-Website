@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PaperFeature from "../components/PaperFeature.astro";
+import ResearchPublication from "../components/ResearchPublication.astro";
 ---
 
 <BaseLayout
@@ -9,8 +9,7 @@ import PaperFeature from "../components/PaperFeature.astro";
   description="Research on diversity in AI-generated peer review, LLM evaluation, and fairness-aware machine learning by Jack Zhang."
 >
   <div class="page-intro">
-    <p class="eyebrow">RESEARCH</p>
-    <h1>Beyond a single perspective.</h1>
+    <h1>Research</h1>
     <p>
       I’m an M.S. ECE student at the University of Illinois Urbana-Champaign,
       advised by Varun Chandrasekaran. I study how machine learning systems
@@ -19,10 +18,10 @@ import PaperFeature from "../components/PaperFeature.astro";
     </p>
   </div>
   <section aria-labelledby="manuscripts-title">
-    <div class="section-heading">
-      <h2 id="manuscripts-title">Papers & publications</h2>
-    </div>
-    <PaperFeature />
+    <h2 id="manuscripts-title" class="sr-only">
+      Papers & publications
+    </h2>
+    <ResearchPublication />
   </section>
   <section class="research-directions" aria-labelledby="directions-title">
     <p class="eyebrow">CONNECTED QUESTIONS</p>
