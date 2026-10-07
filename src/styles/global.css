@@ -956,6 +956,24 @@ details p {
   background: var(--green);
   color: #fff;
 }
+.publication-video {
+  margin: 22px 0 0;
+}
+.publication-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #172d25;
+  object-fit: contain;
+}
+.publication-video figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
 .research-theme .page-intro h1,
 .research-showcase .section-heading h2 {
   font-family: Georgia, serif;

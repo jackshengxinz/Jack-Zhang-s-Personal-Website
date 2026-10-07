@@ -44,5 +44,24 @@ import { paper } from "../data/paper";
         OpenReview
       </a>
     </div>
+    <figure class="publication-video">
+      <video
+        controls
+        playsinline
+        preload="none"
+        poster={`${import.meta.env.BASE_URL}videos/Do_AI_Reviewers_Converge_poster.jpg`}
+        aria-label={`Research overview: ${paper.title}`}
+      >
+        <source
+          src={`${import.meta.env.BASE_URL}videos/Do_AI_Reviewers_Converge_promo.mp4`}
+          type="video/mp4"
+        />
+        Your browser does not support embedded video.
+        <a href={`${import.meta.env.BASE_URL}videos/Do_AI_Reviewers_Converge_promo.mp4`}>
+          Watch the research overview
+        </a>
+      </video>
+      <figcaption>Research overview · Do AI Reviewers Converge?</figcaption>
+    </figure>
   </div>
 </article>
