@@ -5,6 +5,7 @@ export const paper = {
     "Do AI Reviewers Converge? Diversity Collapse in Model-Generated Peer Review",
   status: "Accepted to Findings of EMNLP",
   url: "https://openreview.net/pdf?id=NdDKcU9HlU",
+  codeUrl: "https://github.com/jackshengxinz/Review_Monoculture",
   summary:
     "Do automated reviewers offer independent perspectives? This study compares human and model-generated peer reviews to examine how AI changes the diversity of scientific evaluation.",
   finding:
