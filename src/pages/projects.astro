@@ -1,34 +1,17 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectGrid from "../components/ProjectGrid.astro";
+// Old URL kept so existing links still work; the site is now a single page.
+const target = `${import.meta.env.BASE_URL}#projects`;
 ---
 
-<BaseLayout
-  title="Work | Jack Zhang"
-  sideBarActiveItemID="projects"
-  description="Engineering work by Jack Zhang: Isaac Sim scientific simulation and 3D assets at Shanghai AI Laboratory, FPGA systems, and full-stack applications."
->
-  <div class="page-intro">
-    <p class="eyebrow">ENGINEERING & APPLIED WORK</p>
-    <h1>Work</h1>
-    <p>
-      Scientific simulation, hardware systems, and full-stack applications.
-      Practical work that brings ideas into working systems.
-    </p>
-  </div>
-  <section aria-labelledby="work-title">
-    <div class="section-heading">
-      <h2 id="work-title">Selected work</h2>
-    </div>
-    <ProjectGrid group="engineering" detailed />
-  </section>
-  <aside class="project-contact">
-    <div>
-      <h2>Let’s build something.</h2>
-      <p>Get in touch about engineering projects and collaboration.</p>
-    </div>
-    <a class="button primary" href="mailto:jackshengxinz@gmail.com">
-      Contact me
-    </a>
-  </aside>
-</BaseLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>Shengxin (Jack) Zhang</title>
+  </head>
+  <body>
+    <a href={target}>Continue to the homepage</a>
+  </body>
+</html>
